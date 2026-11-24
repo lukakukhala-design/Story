@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="ka" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>სთორი — Story Home Restaurant &amp; Bar | ქუთაისი</title>
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter + Noto Sans Georgian + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Georgian"', 'Inter', 'sans-serif'],
+            display: ['"Playfair Display"', '"Noto Sans Georgian"', 'serif'],
+          },
+          colors: {
+            espresso: '#181310',
+            roast: '#261E19',
+            limestone: '#F5EFE6',
+            cream: '#FAF7F2',
+            sand: '#E6DCCB',
+            bronze: '#B67D46',
+            copper: '#C98A4E',
+            bronzeDark: '#8C5B2D',
+            terracotta: '#9E4B32',
+            olive: '#536148',
+          },
+          boxShadow: {
+            warm: '0 20px 50px -15px rgba(24, 19, 16, 0.16)',
+            card: '0 10px 30px -10px rgba(24, 19, 16, 0.08)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Subtle limestone grain texture and warm hospitality accents */
+    .limestone-pattern {
+      background-color: #FAF7F2;
+      background-image:
+        radial-gradient(rgba(182, 125, 70, 0.08) 1px, transparent 0),
+        radial-gradient(rgba(24, 19, 16, 0.04) 1px, transparent 0);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+
+    .bronze-gradient {
+      background: linear-gradient(135deg, #C98A4E 0%, #B67D46 50%, #8C5B2D 100%);
+    }
+
+    .espresso-gradient {
+      background: linear-gradient(165deg, #241B16 0%, #181310 55%, #110D0B 100%);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .float-slow {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .float-slow {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body class="limestone-pattern text-espresso antialiased selection:bg-bronze/25 selection:text-espresso">
+
+  <!-- Top Business Pitch / Sales Demo Bar -->
+  <div id="sales-banner" class="espresso-gradient text-limestone border-b border-bronze/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
+      <div class="flex items-center gap-2.5 text-center sm:text-left">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-bronze/20 text-copper border border-bronze/40 shrink-0">
+          Sales Demo / კონცეფცია
+        </span>
+        <p class="text-limestone/90">
+          მზა პრეზენტაცია რესტორნისთვის <strong class="text-white font-semibold">„სთორი“ (Story)</strong> — სრული ადაპტაციით, მენიუს მართვითა და დაჯავშნის ფორმით ჩაბარებისთვის.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="#pitch-details" class="text-copper hover:text-white underline underline-offset-4 font-medium transition">
+          დეტალები
+        </a>
+        <button
+          type="button"
+          onclick="dismissSalesBanner()"
+          aria-label="ბანერის დახურვა"
+          class="p-1.5 rounded-lg text-limestone/70 hover:text-white hover:bg-white/10 transition"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-sand/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Brand Logo & Sign Thumbnail -->
+        <a href="#top" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-bronze/50 shadow-sm shrink-0">
+            <img
+              src="image_cdbef7.jpg"
+              alt="Story Home Restaurant & Bar Sign"
+              onerror="this.onerror=null; this.src='https://placehold.co/120x120/261E19/C98A4E?text=Story';"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div class="leading-tight">
+            <div class="flex items-baseline gap-2">
+              <span class="font-bold text-lg sm:text-xl text-espresso tracking-tight">სთორი</span>
+              <span class="font-display italic text-bronzeDark text-sm sm:text-base font-semibold">Story</span>
+            </div>
+            <p class="text-[11px] text-espresso/65 font-medium">Home Restaurant &amp; Bar · ქუთაისი</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-espresso/80">
+          <a href="#story" class="hover:text-bronzeDark transition">ჩვენი ისტორია</a>
+          <a href="#menu" class="hover:text-bronzeDark transition">მენიუ და ბარი</a>
+          <a href="#reviews" class="hover:text-bronzeDark transition">შეფასებები</a>
+          <a href="#location" class="hover:text-bronzeDark transition">ლოკაცია</a>
+        </nav>
+
+        <!-- Primary Header CTA -->
+        <div class="flex items-center gap-2.5">
+          <a
+            href="tel:+995551555510"
+            class="hidden lg:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-espresso bg-limestone hover:bg-sand/70 border border-sand transition"
+          >
+            <span>📞</span>
+            <span>551 55 55 10</span>
+          </a>
+          <button
+            type="button"
+            onclick="openReservationModal()"
+            class="bronze-gradient text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold shadow-sm hover:opacity-95 active:scale-[0.99] transition cursor-pointer"
+          >
+            მაგიდის დაჯავშნა
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- Left Column: Hospitality Value Proposition & Quick Actions -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/70 border border-bronze/30 text-xs font-semibold text-espresso">
+              <span class="text-bronzeDark">★ 4.6</span>
+              <span class="text-espresso/40">•</span>
+              <span>1,200+ შეფასება</span>
+              <span class="text-espresso/40">•</span>
+              <span class="text-olive font-bold">ღიაა 12:00 – 00:00</span>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xs sm:text-sm uppercase tracking-[0.18em] text-bronzeDark font-semibold">
+                Home Restaurant &amp; Bar · წერეთლის ქ. 52, ქუთაისი
+              </p>
+              <h1 class="text-3xl sm:text-5xl font-bold text-espresso leading-[1.15] tracking-tight">
+                სითბო, გემო და <span class="font-display italic text-bronzeDark">Story</span> ქუთაისის გულში
+              </h1>
+              <p class="text-base sm:text-lg text-espresso/75 leading-relaxed max-w-xl">
+                შინაურული მასპინძლობა, გამორჩეული ქართული და თანამედროვე კერძები, საავტორო სასმელები და მყუდრო საღამოები „სთორის“ ბარში.
+              </p>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-1">
+              <button
+                type="button"
+                onclick="openReservationModal()"
+                class="bronze-gradient text-white px-6 py-3.5 rounded-2xl font-semibold text-sm sm:text-base shadow-warm hover:brightness-105 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>🍽️</span>
+                <span>მაგიდის დაჯავშნა</span>
+              </button>
+
+              <a
+                href="#menu"
+                class="bg-white text-espresso border border-sand hover:border-bronze/60 px-6 py-3.5 rounded-2xl font-semibold text-sm sm:text-base shadow-card transition flex items-center justify-center gap-2"
+              >
+                <span>📖</span>
+                <span>მენიუს ნახვა</span>
+              </a>
+
+              <a
+                href="tel:+995551555510"
+                class="espresso-gradient text-limestone px-5 py-3.5 rounded-2xl font-semibold text-sm sm:text-base hover:opacity-95 transition flex items-center justify-center gap-2"
+              >
+                <span>📞</span>
+                <span>დარეკვა · 551 55 55 10</span>
+              </a>
+            </div>
+
+            <!-- Key Hospitality Highlights Strip -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-sand">
+              <div class="bg-white/80 rounded-2xl p-3.5 border border-sand/80">
+                <p class="text-lg sm:text-2xl font-bold text-espresso">4.6 ★</p>
+                <p class="text-[11px] sm:text-xs text-espresso/65 mt-0.5">1,200+ სტუმრის ნდობა</p>
+              </div>
+              <div class="bg-white/80 rounded-2xl p-3.5 border border-sand/80">
+                <p class="text-lg sm:text-2xl font-bold text-espresso">12:00–00:00</p>
+                <p class="text-[11px] sm:text-xs text-espresso/65 mt-0.5">ყოველდღე · სადილი &amp; ბარი</p>
+              </div>
+              <div class="bg-white/80 rounded-2xl p-3.5 border border-sand/80">
+                <p class="text-lg sm:text-2xl font-bold text-bronzeDark">წერეთლის 52</p>
+                <p class="text-[11px] sm:text-xs text-espresso/65 mt-0.5">ქუთაისის ცენტრალური უბანი</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Uploaded Sign Photo Showcase + Interactive Visual Card -->
+          <div class="lg:col-span-6">
+            <div class="relative bg-white rounded-3xl p-4 sm:p-6 border border-sand shadow-warm">
+              <!-- Decorative Top Badge -->
+              <div class="flex items-center justify-between mb-3 px-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-bronzeDark">
+                  ფასადის ორიგინალი აბრა · Story
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-xs text-espresso/70 bg-limestone px-3 py-1 rounded-full border border-sand">
+                  <span class="w-2 h-2 rounded-full bg-olive"></span>
+                  Home Restaurant &amp; Bar
+                </span>
+              </div>
+
+              <!-- Prominent Uploaded Sign Photo -->
+              <div class="relative rounded-2xl overflow-hidden bg-roast border border-bronze/30 aspect-[4/3] sm:aspect-square max-h-[480px] w-full flex items-center justify-center">
+                <img
+                  src="image_cdbef7.jpg"
+                  alt="სთორი — Story Home Restaurant and Bar Brushed Bronze Sign on Limestone Wall"
+                  onerror="this.onerror=null; this.src='https://placehold.co/800x800/261E19/C98A4E?text=Story+-+Home+Restaurant+%26+Bar';"
+                  class="w-full h-full object-cover hover:scale-[1.02] transition duration-500"
+                />
+                <!-- Subtle Bottom Caption Overlay -->
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-espresso/90 via-espresso/55 to-transparent p-4 sm:p-5 text-limestone">
+                  <p class="text-xs uppercase tracking-widest text-copper font-semibold">
+                    ბრინჯაოსა და კირქვის ესთეტიკა
+                  </p>
+                  <p class="text-sm sm:text-base font-medium text-white mt-0.5">
+                    სადაც ყოველი ვახშამი და სადღეგრძელო ახალ ამბავს იწყებს
+                  </p>
+                </div>
+              </div>
+
+              <!-- Floating Hospitality Note Below Image -->
+              <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-limestone/85 rounded-2xl p-4 border border-sand">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bronze-gradient text-white flex items-center justify-center font-display italic font-bold text-lg shrink-0">
+                    S
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-espresso">სთორი · Home Restaurant &amp; Bar</p>
+                    <p class="text-xs text-espresso/70">ოჯახური სითბო, გემრიელი სამზარეულო და სასიამოვნო გარემო</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onclick="openReservationModal()"
+                  class="text-xs font-semibold text-bronzeDark hover:text-espresso underline underline-offset-4 shrink-0 cursor-pointer"
+                >
+                  დაჯავშნე ახლავე →
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND STORY & ATMOSPHERE SECTION -->
+    <section id="story" class="py-16 sm:py-24 bg-white border-y border-sand">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <span class="text-xs uppercase tracking-[0.2em] text-bronzeDark font-semibold">
+            ჩვენი ისტორია &amp; ატმოსფერო
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-bold text-espresso mt-2">
+            რატომ უყვართ სტუმრებს „სთორი“ ქუთაისში?
+          </h2>
+          <p class="text-sm sm:text-base text-espresso/75 mt-3 leading-relaxed">
+            „სთორი“ აერთიანებს სახლური რესტორნის სიმყუდროვესა და თანამედროვე ბარის ენერგიას. თბილი განათება, ხისა და ბრინჯაოს დეტალები, ყურადღებიანი სერვისი და გულწრფელი გემოები ქმნის ადგილს, სადაც დრო ნელა და სასიამოვნოდ გადის.
+          </p>
+        </div>
+
+        <!-- 3 Atmosphere Visual Cards with Custom SVG Artwork -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Card 1: Home Kitchen -->
+          <div class="bg-cream rounded-3xl p-6 border border-sand shadow-card hover:-translate-y-1 transition duration-300">
+            <div class="h-44 rounded-2xl espresso-gradient flex items-center justify-center mb-5 overflow-hidden relative">
+              <svg viewBox="0 0 240 140" class="w-full h-full" role="img" aria-label="სახლური სამზარეულოს ილუსტრაცია">
+                <circle cx="120" cy="70" r="46" fill="#B67D46" opacity="0.18" />
+                <ellipse cx="120" cy="76" rx="48" ry="22" fill="#F5EFE6" />
+                <ellipse cx="120" cy="73" rx="38" ry="15" fill="#9E4B32" opacity="0.85" />
+                <circle cx="105" cy="71" r="6" fill="#FAF7F2" opacity="0.9" />
+                <circle cx="125" cy="74" r="5" fill="#C98A4E" />
+                <circle cx="136" cy="69" r="4" fill="#536148" />
+                <path d="M98 44 Q102 32 98 22" stroke="#C98A4E" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7" />
+                <path d="M120 40 Q125 28 120 18" stroke="#FAF7F2" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.65" />
+                <path d="M142 44 Q138 32 142 22" stroke="#C98A4E" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-espresso">სახლური გემო და ხარისხი</h3>
+            <p class="text-sm text-espresso/75 mt-2 leading-relaxed">
+              ახალი ინგრედიენტებით მომზადებული ტრადიციული იმერული და ქართული კერძები თანამედროვე მიდგომითა და ზუსტი რეცეპტურით.
+            </p>
+          </div>
+
+          <!-- Card 2: Warm Bar & Drinks -->
+          <div class="bg-cream rounded-3xl p-6 border border-sand shadow-card hover:-translate-y-1 transition duration-300">
+            <div class="h-44 rounded-2xl espresso-gradient flex items-center justify-center mb-5 overflow-hidden relative">
+              <svg viewBox="0 0 240 140" class="w-full h-full" role="img" aria-label="ბარისა და სასმელების ილუსტრაცია">
+                <circle cx="120" cy="70" r="46" fill="#C98A4E" opacity="0.18" />
+                <!-- Cocktail / Wine Glass -->
+                <path d="M94 42 H146 L124 76 V104 H142 V110 H98 V104 H116 V76 Z" fill="#FAF7F2" opacity="0.92" />
+                <path d="M101 50 H139 L122 74 H118 Z" fill="#B67D46" />
+                <circle cx="136" cy="46" r="9" fill="#9E4B32" opacity="0.85" />
+                <circle cx="152" cy="64" r="4" fill="#C98A4E" />
+                <circle cx="88" cy="84" r="3" fill="#FAF7F2" opacity="0.6" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-espresso">საავტორო ბარი &amp; ღვინო</h3>
+            <p class="text-sm text-espresso/75 mt-2 leading-relaxed">
+              ქართული ღვინის შერჩეული სახეობები, კლასიკური და საავტორო კოქტეილები — იდეალური თანხლება მეგობრული საუბრებისთვის.
+            </p>
+          </div>
+
+          <!-- Card 3: Cozy Gathering -->
+          <div class="bg-cream rounded-3xl p-6 border border-sand shadow-card hover:-translate-y-1 transition duration-300">
+            <div class="h-44 rounded-2xl espresso-gradient flex items-center justify-center mb-5 overflow-hidden relative">
+              <svg viewBox="0 0 240 140" class="w-full h-full" role="img" aria-label="მყუდრო გარემოს ილუსტრაცია">
+                <circle cx="120" cy="70" r="46" fill="#536148" opacity="0.2" />
+                <!-- Warm Pendant Lamps -->
+                <line x1="86" y1="12" x2="86" y2="44" stroke="#C98A4E" stroke-width="2" />
+                <path d="M70 58 Q86 40 102 58 Z" fill="#B67D46" />
+                <circle cx="86" cy="63" r="8" fill="#FAF7F2" opacity="0.45" />
+
+                <line x1="154" y1="12" x2="154" y2="52" stroke="#C98A4E" stroke-width="2" />
+                <path d="M138 66 Q154 48 170 66 Z" fill="#C98A4E" />
+                <circle cx="154" cy="71" r="8" fill="#FAF7F2" opacity="0.45" />
+
+                <rect x="66" y="96" width="108" height="8" rx="4" fill="#FAF7F2" opacity="0.85" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-espresso">მყუდრო შეხვედრების ადგილი</h3>
+            <p class="text-sm text-espresso/75 mt-2 leading-relaxed">
+              როგორც შუადღის მშვიდი ლანჩისთვის, ისე საღამოს შეკრებებისთვის — „სთორიში“ თავს ისე იგრძნობთ, როგორც საკუთარ სახლში.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED MENU & BAR HIGHLIGHTS (INTERACTIVE FILTERABLE TABS) -->
+    <section id="menu" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] text-bronzeDark font-semibold">
+              გემოების კოლექცია
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-bold text-espresso mt-1.5">
+              მენიუ და ბარის რჩეულები
+            </h2>
+            <p class="text-sm sm:text-base text-espresso/70 mt-2 max-w-2xl">
+              აირჩიეთ კატეგორია და გაეცანით ჩვენს გამორჩეულ კერძებსა და სასმელებს. მენიუ მარტივად განახლდება რესტორნის სეზონური შეთავაზებების მიხედვით.
+            </p>
+          </div>
+
+          <!-- Interactive Filter Tabs -->
+          <div id="menu-tabs" class="inline-flex flex-wrap gap-2 bg-white p-1.5 rounded-2xl border border-sand shadow-sm">
+            <button
+              type="button"
+              data-category="all"
+              onclick="filterMenu('all')"
+              class="menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer bronze-gradient text-white"
+            >
+              ყველა
+            </button>
+            <button
+              type="button"
+              data-category="georgian"
+              onclick="filterMenu('georgian')"
+              class="menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer text-espresso/80 hover:bg-limestone"
+            >
+              ქართული კერძები
+            </button>
+            <button
+              type="button"
+              data-category="contemporary"
+              onclick="filterMenu('contemporary')"
+              class="menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer text-espresso/80 hover:bg-limestone"
+            >
+              თანამედროვე სამზარეულო
+            </button>
+            <button
+              type="button"
+              data-category="bar"
+              onclick="filterMenu('bar')"
+              class="menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer text-espresso/80 hover:bg-limestone"
+            >
+              ბარი &amp; სასმელები
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu Items Grid (Populated via JS) -->
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <!-- Bottom Menu Action -->
+        <div class="mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-sand flex flex-col sm:flex-row items-center justify-between gap-4 shadow-card">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-espresso">გსურთ სპეციალური შეკვეთა ან ჯგუფური მაგიდა?</h3>
+            <p class="text-xs sm:text-sm text-espresso/70 mt-0.5">
+              დაგვიკავშირდით ან დაჯავშნეთ მაგიდა წინასწარ — 551 55 55 10.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="openReservationModal()"
+            class="bronze-gradient text-white px-6 py-3 rounded-2xl text-sm font-semibold shadow-sm hover:opacity-95 transition shrink-0 cursor-pointer"
+          >
+            მაგიდის დაჯავშნა
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUEST REVIEWS & REPUTATION SECTION -->
+    <section id="reviews" class="py-16 sm:py-24 espresso-gradient text-limestone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+          <div class="lg:col-span-7">
+            <span class="text-xs uppercase tracking-[0.2em] text-copper font-semibold">
+              სტუმრების ნდობა &amp; რეპუტაცია
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-bold text-white mt-2">
+              4.6 ვარსკვლავი 1,200-ზე მეტი შეფასებით
+            </h2>
+            <p class="text-sm sm:text-base text-limestone/75 mt-3 max-w-2xl leading-relaxed">
+              ქუთაისის მაცხოვრებლები და მოგზაურები „სთორის“ ირჩევენ თბილი მიღების, გემრიელი კერძების, სასიამოვნო ბარის ატმოსფეროსა და სტაბილური ხარისხის გამო.
+            </p>
+          </div>
+
+          <!-- Rating Summary Card -->
+          <div class="lg:col-span-5 bg-roast/90 border border-bronze/30 rounded-3xl p-6 shadow-warm">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-4xl sm:text-5xl font-bold text-white">4.6<span class="text-xl text-copper">/5</span></p>
+                <p class="text-copper text-lg tracking-wider mt-1" aria-label="4.6 out of 5 stars">★★★★☆</p>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-semibold text-white">1,200+ შეფასება</p>
+                <p class="text-xs text-limestone/65 mt-1">Google &amp; სტუმრების გამოხმაურება</p>
+                <span class="inline-block mt-2 text-[11px] px-2.5 py-1 rounded-full bg-bronze/20 text-copper font-medium">
+                  რჩეული ადგილი ქუთაისში
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-roast/75 border border-white/10 rounded-3xl p-6">
+            <div class="flex items-center justify-between text-copper text-sm mb-3">
+              <span>★★★★★</span>
+              <span class="text-xs text-limestone/55">სადილი &amp; ვახშამი</span>
+            </div>
+            <p class="text-sm text-limestone/90 leading-relaxed">
+              „ძალიან მყუდრო და თბილი გარემოა. კერძები უგემრიელესია, პორციები კარგი, პერსონალი კი ყურადღებიანი. ქუთაისში ერთ-ერთი საუკეთესო ადგილია.“
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-semibold text-white">ნინო კ.</span>
+              <span class="text-[11px] text-limestone/55">დადასტურებული სტუმარი</span>
+            </div>
+          </article>
+
+          <article class="bg-roast/75 border border-white/10 rounded-3xl p-6">
+            <div class="flex items-center justify-between text-copper text-sm mb-3">
+              <span>★★★★★</span>
+              <span class="text-xs text-limestone/55">საღამო ბარში</span>
+            </div>
+            <p class="text-sm text-limestone/90 leading-relaxed">
+              „მეგობრებთან ერთად საღამოს შევიარეთ. შესანიშნავი სასმელები, სასიამოვნო მუსიკა და არაჩვეულებრივი განწყობა. აუცილებლად დავბრუნდებით.“
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-semibold text-white">გიორგი მ.</span>
+              <span class="text-[11px] text-limestone/55">დადასტურებული სტუმარი</span>
+            </div>
+          </article>
+
+          <article class="bg-roast/75 border border-white/10 rounded-3xl p-6">
+            <div class="flex items-center justify-between text-copper text-sm mb-3">
+              <span>★★★★☆</span>
+              <span class="text-xs text-limestone/55">ოჯახური ვიზიტი</span>
+            </div>
+            <p class="text-sm text-limestone/90 leading-relaxed">
+              „სახელწოდება „Story“ ზუსტად შეესაბამება — აქ ყოველთვის კარგი ისტორიებით და კმაყოფილი ბრუნდები. მოსახერხებელი ლოკაციაა წერეთლის ქუჩაზე.“
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-semibold text-white">მარიამ დ.</span>
+              <span class="text-[11px] text-limestone/55">დადასტურებული სტუმარი</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION, HOURS & CONTACT SECTION -->
+    <section id="location" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.2em] text-bronzeDark font-semibold">
+            გვეწვიეთ ქუთაისში
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-bold text-espresso mt-1.5">
+            ლოკაცია, სამუშაო საათები და კონტაქტი
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left: Details & Click-to-Call / Copy Phone -->
+          <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-sand shadow-card flex flex-col justify-between space-y-6">
+            <div class="space-y-5">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-limestone border border-sand flex items-center justify-center text-lg shrink-0">
+                  📍
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-espresso">მისამართი</h3>
+                  <p class="text-sm text-espresso/75 mt-0.5">წერეთლის ქუჩა 52, ქუთაისი, საქართველო</p>
+                  <p class="text-xs text-espresso/55 mt-0.5">52 Tsereteli St, Kutaisi</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-limestone border border-sand flex items-center justify-center text-lg shrink-0">
+                  🕒
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-espresso">სამუშაო საათები</h3>
+                  <p class="text-sm text-espresso/75 mt-0.5">ორშაბათი – კვირა: 12:00 – 00:00</p>
+                  <p class="text-xs text-olive font-semibold mt-0.5">ღიაა ყოველდღე · 12:00 PM – 12:00 AM</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-limestone border border-sand flex items-center justify-center text-lg shrink-0">
+                  📞
+                </div>
+                <div class="w-full">
+                  <h3 class="text-sm font-bold text-espresso">ტელეფონი / დაჯავშნა</h3>
+                  <div class="flex flex-wrap items-center gap-2 mt-1.5">
+                    <a
+                      href="tel:+995551555510"
+                      class="text-base font-bold text-espresso hover:text-bronzeDark underline underline-offset-4"
+                    >
+                      551 55 55 10
+                    </a>
+                    <button
+                      type="button"
+                      onclick="copyPhoneNumber()"
+                      class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-limestone hover:bg-sand text-espresso border border-sand transition cursor-pointer"
+                    >
+                      ნომრის კოპირება
+                    </button>
+                  </div>
+                  <p id="copy-feedback" class="text-xs text-olive font-medium mt-1 h-4" aria-live="polite"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-sand flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                onclick="openReservationModal()"
+                class="flex-1 bronze-gradient text-white py-3 px-4 rounded-2xl text-sm font-semibold text-center shadow-sm hover:opacity-95 transition cursor-pointer"
+              >
+                მაგიდის დაჯავშნა
+              </button>
+              <a
+                href="https://www.google.com/maps/place/%E1%83%A1%E1%83%97%E1%83%9D%E1%83%A0%E1%83%98/@42.2649777,42.5607773,12z/data=!4m11!1m3!2m2!1z4YOg4YOU4YOh4YOi4YOd4YOg4YOc4YOU4YOR4YOY!6e5!3m6!1s0x405c8d298e8a92d9:0xd051477256899dc4!8m2!3d42.2649777!4d42.7049729!15sCh7hg6Dhg5Thg6Hhg6Lhg53hg6Dhg5zhg5Thg5Hhg5haICIe4YOg4YOU4YOh4YOi4YOd4YOg4YOc4YOU4YOR4YOYkgEKcmVzdGF1cmFudOABAA!16s%2Fg%2F11t4kzpvbc"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 bg-limestone hover:bg-sand/80 text-espresso border border-sand py-3 px-4 rounded-2xl text-sm font-semibold text-center transition"
+              >
+                Google Maps · მიმართულება
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Map Pin Card & Route Helper -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-4 sm:p-6 border border-sand shadow-card flex flex-col justify-between">
+            <div class="relative rounded-2xl overflow-hidden espresso-gradient min-h-[280px] sm:min-h-[340px] flex flex-col justify-between p-6 text-limestone border border-bronze/25">
+              <!-- Stylized Street Grid SVG Backdrop -->
+              <svg viewBox="0 0 600 340" class="absolute inset-0 w-full h-full opacity-25 pointer-events-none" preserveAspectRatio="xMidYMid slice">
+                <line x1="0" y1="75" x2="600" y2="75" stroke="#C98A4E" stroke-width="2" stroke-dasharray="6 6" />
+                <line x1="0" y1="175" x2="600" y2="185" stroke="#FAF7F2" stroke-width="4" />
+                <line x1="0" y1="275" x2="600" y2="265" stroke="#C98A4E" stroke-width="2" />
+                <line x1="140" y1="0" x2="155" y2="340" stroke="#FAF7F2" stroke-width="2.5" />
+                <line x1="310" y1="0" x2="295" y2="340" stroke="#C98A4E" stroke-width="3" />
+                <line x1="470" y1="0" x2="485" y2="340" stroke="#FAF7F2" stroke-width="2" />
+                <circle cx="302" cy="180" r="56" fill="none" stroke="#C98A4E" stroke-width="1.5" stroke-dasharray="4 4" />
+              </svg>
+
+              <div class="relative z-10 flex flex-wrap items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/15 text-limestone">
+                  ქუთაისი · წერეთლის ქ. 52
+                </span>
+                <span class="text-xs text-copper font-medium">42.2650° N, 42.7050° E</span>
+              </div>
+
+              <!-- Interactive Center Pin -->
+              <div class="relative z-10 my-auto flex flex-col items-center text-center py-4">
+                <button
+                  type="button"
+                  onclick="togglePinInfo()"
+                  class="float-slow group flex flex-col items-center cursor-pointer"
+                  aria-label="რუკის ნიშნულის ინფორმაცია"
+                >
+                  <span class="w-14 h-14 rounded-2xl bronze-gradient text-white flex items-center justify-center text-2xl shadow-warm border-2 border-white/70 group-hover:scale-105 transition">
+                    📍
+                  </span>
+                  <span class="mt-2 px-4 py-1.5 rounded-xl bg-espresso/90 border border-bronze/40 text-white text-sm font-bold shadow-md">
+                    სთორი · Story Home Restaurant &amp; Bar
+                  </span>
+                </button>
+                <p id="pin-extra-info" class="hidden mt-2.5 text-xs text-copper bg-espresso/85 px-3.5 py-1.5 rounded-xl border border-bronze/30">
+                  ღიაა ყოველდღე 12:00 – 00:00 · ტელ: 551 55 55 10
+                </p>
+              </div>
+
+              <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-espresso/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                <div class="text-xs text-limestone/80">
+                  სწრაფი ნავიგაციისთვის გახსენით რესტორნის ზუსტი წერტილი Google Maps-ში.
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/%E1%83%A1%E1%83%97%E1%83%9D%E1%83%A0%E1%83%98/@42.2649777,42.5607773,12z/data=!4m11!1m3!2m2!1z4YOg4YOU4YOh4YOi4YOd4YOg4YOc4YOU4YOR4YOY!6e5!3m6!1s0x405c8d298e8a92d9:0xd051477256899dc4!8m2!3d42.2649777!4d42.7049729!15sCh7hg6Dhg5Thg6Hhg6Lhg53hg6Dhg5zhg5Thg5Hhg5haICIe4YOg4YOU4YOh4YOi4YOd4YOg4YOc4YOU4YOR4YOYkgEKcmVzdGF1cmFudOABAA!16s%2Fg%2F11t4kzpvbc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bronze-gradient text-white px-4 py-2 rounded-xl text-xs font-semibold text-center shrink-0 hover:opacity-95 transition"
+                >
+                  გზის გაკვლევა →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS / SALES PITCH BANNER FOR HANDOVER -->
+    <section id="pitch-details" class="py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-bronze/35 shadow-warm">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 space-y-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-bronze/15 text-bronzeDark">
+                გასაყიდი / ჩასაბარებელი ვებ-პრეზენტაცია
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-espresso">
+                მზა ვებ-გვერდი რესტორან „სთორისთვის“ — სრული ადაპტაციითა და ჩაბარებით
+              </h2>
+              <p class="text-sm sm:text-base text-espresso/75 leading-relaxed">
+                ეს ვებ-გვერდი შექმნილია როგორც მზა ვიზუალური და ფუნქციური პრეზენტაცია რესტორნის მფლობელებისთვის ან მენეჯმენტისთვის. ჩაბარებისას მარტივად ინტეგრირდება რეალური მენიუ, ფასები, კერძების ფოტოები, სოციალური ბმულები და დომენი — მობილურ და დესკტოპ მოწყობილობებზე სრული ადაპტაციით.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1 text-xs font-semibold text-espresso/80">
+                <span class="px-3 py-1.5 rounded-xl bg-limestone border border-sand">✓ მენიუს ფილტრაცია</span>
+                <span class="px-3 py-1.5 rounded-xl bg-limestone border border-sand">✓ დაჯავშნის ინტერაქტიული ფორმა</span>
+                <span class="px-3 py-1.5 rounded-xl bg-limestone border border-sand">✓ ქართულ-ინგლისური ბრენდინგი</span>
+                <span class="px-3 py-1.5 rounded-xl bg-limestone border border-sand">✓ სწრაფი ჩატვირთვა &amp; ადაპტაცია</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col gap-3 bg-limestone/80 p-5 rounded-2xl border border-sand">
+              <p class="text-xs font-bold uppercase tracking-wider text-bronzeDark">
+                პრეზენტაციისა და ჩაბარების კონტაქტი
+              </p>
+              <p class="text-sm text-espresso/80">
+                გსურთ საიტის მორგება „სთორის“ რეალურ მენიუსა და ბრენდ-სტანდარტებზე?
+              </p>
+              <button
+                type="button"
+                onclick="openReservationModal()"
+                class="bronze-gradient text-white py-3 px-4 rounded-xl text-sm font-semibold hover:opacity-95 transition cursor-pointer"
+              >
+                დემო მოთხოვნა / დაჯავშნა
+              </button>
+              <a
+                href="tel:+995551555510"
+                class="bg-white hover:bg-sand/50 text-espresso border border-sand py-2.5 px-4 rounded-xl text-xs font-semibold text-center transition"
+              >
+                რესტორნის ცხელი ხაზი: 551 55 55 10
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="espresso-gradient text-limestone/80 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img
+            src="image_cdbef7.jpg"
+            alt="Story Sign"
+            onerror="this.onerror=null; this.src='https://placehold.co/96x96/261E19/C98A4E?text=Story';"
+            class="w-11 h-11 rounded-xl object-cover border border-bronze/40"
+          />
+          <div>
+            <p class="font-bold text-white text-base">სთორი · Story Home Restaurant &amp; Bar</p>
+            <p class="text-xs text-limestone/65">წერეთლის ქ. 52, ქუთაისი · ყოველდღე 12:00 – 00:00</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-5 text-xs sm:text-sm">
+          <a href="#story" class="hover:text-copper transition">ჩვენი ისტორია</a>
+          <a href="#menu" class="hover:text-copper transition">მენიუ</a>
+          <a href="#reviews" class="hover:text-copper transition">შეფასებები</a>
+          <a href="#location" class="hover:text-copper transition">ლოკაცია</a>
+          <a href="tel:+995551555510" class="text-copper font-semibold hover:underline">551 55 55 10</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-limestone/55">
+        <p>© <span id="current-year">2026</span> სთორი (Story — Home Restaurant &amp; Bar). ყველა უფლება დაცულია.</p>
+        <p>შექმნილია თანამედროვე ვებ-სტანდარტებით · ქუთაისი</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TABLE RESERVATION MODAL -->
+  <div
+    id="reservation-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-espresso/75 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="bg-cream text-espresso w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-sand shadow-warm relative">
+      <button
+        type="button"
+        onclick="closeReservationModal()"
+        aria-label="ფანჯრის დახურვა"
+        class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-limestone hover:bg-sand text-espresso flex items-center justify-center font-bold transition cursor-pointer"
+      >
+        ✕
+      </button>
+
+      <div id="reservation-form-container">
+        <span class="text-xs uppercase tracking-widest text-bronzeDark font-semibold">
+          სთორი · Story Home Restaurant &amp; Bar
+        </span>
+        <h3 id="modal-title" class="text-2xl font-bold text-espresso mt-1">
+          მაგიდის დაჯავშნა
+        </h3>
+        <p class="text-xs sm:text-sm text-espresso/70 mt-1">
+          შეავსეთ მონაცემები და მიიღეთ მყისიერი დასტური. სწრაფი კავშირისთვის: <a href="tel:+995551555510" class="font-semibold text-bronzeDark underline">551 55 55 10</a>.
+        </p>
+
+        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="mt-5 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="guest-name" class="block text-xs font-semibold text-espresso mb-1.5">სახელი *</label>
+              <input
+                id="guest-name"
+                type="text"
+                required
+                placeholder="მაგ: ლევანი"
+                class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3.5 py-2.5 text-sm"
+              />
+            </div>
+            <div>
+              <label for="guest-phone" class="block text-xs font-semibold text-espresso mb-1.5">ტელეფონი *</label>
+              <input
+                id="guest-phone"
+                type="tel"
+                required
+                placeholder="551 55 55 10"
+                class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3.5 py-2.5 text-sm"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label for="booking-date" class="block text-xs font-semibold text-espresso mb-1.5">თარიღი *</label>
+              <input
+                id="booking-date"
+                type="date"
+                required
+                class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3 py-2.5 text-sm"
+              />
+            </div>
+            <div>
+              <label for="booking-time" class="block text-xs font-semibold text-espresso mb-1.5">დრო *</label>
+              <select
+                id="booking-time"
+                class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3 py-2.5 text-sm"
+              >
+                <option value="13:00">13:00</option>
+                <option value="15:00">15:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:30" selected>19:30</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+              </select>
+            </div>
+            <div>
+              <label for="booking-guests" class="block text-xs font-semibold text-espresso mb-1.5">სტუმრები *</label>
+              <select
+                id="booking-guests"
+                class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3 py-2.5 text-sm"
+              >
+                <option value="2 სტუმარი">2 სტუმარი</option>
+                <option value="3-4 სტუმარი" selected>3-4 სტუმარი</option>
+                <option value="5-6 სტუმარი">5-6 სტუმარი</option>
+                <option value="7+ სტუმარი">7+ სტუმარი</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="booking-note" class="block text-xs font-semibold text-espresso mb-1.5">დამატებითი სურვილი (არასავალდებულო)</label>
+            <input
+              id="booking-note"
+              type="text"
+              placeholder="მაგ: მშვიდი მაგიდა, დაბადების დღე..."
+              class="w-full rounded-xl bg-white border border-sand focus:border-bronze focus:outline-none px-3.5 py-2.5 text-sm"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bronze-gradient text-white py-3.5 rounded-2xl font-semibold text-sm shadow-warm hover:opacity-95 transition cursor-pointer"
+          >
+            ჯავშნის დადასტურება
+          </button>
+        </form>
+      </div>
+
+      <!-- Instant Confirmation View -->
+      <div id="reservation-confirmation" class="hidden text-center py-4 space-y-4">
+        <div class="w-14 h-14 rounded-2xl bg-olive/15 text-olive flex items-center justify-center text-2xl mx-auto font-bold">
+          ✓
+        </div>
+        <h3 class="text-2xl font-bold text-espresso">ჯავშანი მიღებულია!</h3>
+        <p id="confirmation-summary" class="text-sm text-espresso/80 leading-relaxed bg-white p-4 rounded-2xl border border-sand"></p>
+        <p class="text-xs text-espresso/65">
+          სასწრაფო ცვლილების შემთხვევაში დაგვიკავშირდით: <a href="tel:+995551555510" class="font-semibold text-bronzeDark underline">551 55 55 10</a>.
+        </p>
+        <button
+          type="button"
+          onclick="closeReservationModal()"
+          class="bronze-gradient text-white px-6 py-2.5 rounded-xl text-sm font-semibold cursor-pointer"
+        >
+          დახურვა
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Menu Data representing Georgian, Contemporary, and Bar offerings
+    const MENU_ITEMS = [
+      {
+        id: 1,
+        category: 'georgian',
+        categoryLabel: 'ქართული კერძები',
+        badge: 'რჩეული',
+        title: 'იმერული შქმერული და პური',
+        subtitle: 'Imeretian Shkmeruli',
+        description: 'ნივრისა და ნაღების არომატულ სოუსში მომზადებული ნაზი ხორცი, გამომცხვარ პურთან ერთად.',
+        tagColor: 'bg-terracotta/15 text-terracotta',
+      },
+      {
+        id: 2,
+        category: 'georgian',
+        categoryLabel: 'ქართული კერძები',
+        badge: 'ტრადიციული',
+        title: 'ხაჭაპური „სთორის“ სტილში',
+        subtitle: 'Signature Cheese Bread',
+        description: 'ხრაშუნა ცომში შერჩეული ყველით გამომცხვარი კლასიკა, იდეალური სადღესასწაულო მაგიდისთვის.',
+        tagColor: 'bg-bronze/15 text-bronzeDark',
+      },
+      {
+        id: 3,
+        category: 'georgian',
+        categoryLabel: 'ქართული კერძები',
+        badge: 'სახლური',
+        title: 'ხბოს ჩაშუშული სანელებლებით',
+        subtitle: 'Braised Veal Stew',
+        description: 'ნელ ცეცხლზე მოთუშული რბილი ხბოს ხორცი ქართული მწვანილითა და მდიდარი სოუსით.',
+        tagColor: 'bg-olive/15 text-olive',
+      },
+      {
+        id: 4,
+        category: 'contemporary',
+        categoryLabel: 'თანამედროვე სამზარეულო',
+        badge: 'პოპულარული',
+        title: 'გრილზე შემწვარი ქათმის ფილე',
+        subtitle: 'Grilled Herb Chicken',
+        description: 'არომატული მარინადით მომზადებული ფილე სეზონური ბოსტნეულის გარნირითა და საფირმო სოუსით.',
+        tagColor: 'bg-bronze/15 text-bronzeDark',
+      },
+      {
+        id: 5,
+        category: 'contemporary',
+        categoryLabel: 'თანამედროვე სამზარეულო',
+        badge: 'ახალი',
+        title: 'ხრაშუნა სალათი და ყველი',
+        subtitle: 'Warm Salad & Cheese',
+        description: 'მსუბუქი და გემრიელი კომბინაცია თანამედროვე დრესინგით — შესანიშნავი არჩევანი შუადღისას.',
+        tagColor: 'bg-olive/15 text-olive',
+      },
+      {
+        id: 6,
+        category: 'bar',
+        categoryLabel: 'ბარი & სასმელები',
+        badge: 'Story Bar',
+        title: 'საავტორო კოქტეილები და მიქსები',
+        subtitle: 'House Craft Cocktails',
+        description: 'ბარმენის მიერ შექმნილი დაბალანსებული სასმელები საღამოს განწყობისა და მეგობრული შეკრებებისთვის.',
+        tagColor: 'bg-terracotta/15 text-terracotta',
+      },
+      {
+        id: 7,
+        category: 'bar',
+        categoryLabel: 'ბარი & სასმელები',
+        badge: 'ქართული მარანი',
+        title: 'ქართული ღვინის არჩევანი',
+        subtitle: 'Georgian Wine Selection',
+        description: 'თეთრი და წითელი ღვინოები სხვადასხვა რეგიონიდან, კერძებთან ჰარმონიული შეხამებით.',
+        tagColor: 'bg-bronze/15 text-bronzeDark',
+      },
+      {
+        id: 8,
+        category: 'bar',
+        categoryLabel: 'ბარი & სასმელები',
+        badge: 'გამაგრილებელი',
+        title: 'ხელნაკეთი ლიმონათები და ყავა',
+        subtitle: 'Lemonades & Espresso Bar',
+        description: 'ბუნებრივი ლიმონათები, არომატული ყავა და გამაგრილებელი სასმელები ნებისმიერ დროს.',
+        tagColor: 'bg-olive/15 text-olive',
+      },
+      {
+        id: 9,
+        category: 'contemporary',
+        categoryLabel: 'თანამედროვე სამზარეულო',
+        badge: 'ვახშმისთვის',
+        title: 'ცხელი დაფა კომპანიისთვის',
+        subtitle: 'Sharing Hot Platter',
+        description: 'შექმნილია გაზიარებისთვის — იდეალურია დიდი მაგიდისა და სასიამოვნო საღამოსთვის.',
+        tagColor: 'bg-bronze/15 text-bronzeDark',
+      },
+    ];
+
+    // Render Menu Cards based on selected category
+    function filterMenu(category) {
+      const grid = document.getElementById('menu-grid');
+      const buttons = document.querySelectorAll('.menu-tab-btn');
+
+      // Update active button styling
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-category') === category;
+        btn.className = isActive
+          ? 'menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer bronze-gradient text-white shadow-sm'
+          : 'menu-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer text-espresso/80 hover:bg-limestone';
+      });
+
+      const items = category === 'all'
+        ? MENU_ITEMS
+        : MENU_ITEMS.filter((item) => item.category === category);
+
+      grid.innerHTML = items.map((item) => `
+        <article class="bg-white rounded-3xl p-6 border border-sand shadow-card hover:border-bronze/50 hover:-translate-y-0.5 transition duration-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-espresso/55">
+                ${item.categoryLabel}
+              </span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full ${item.tagColor}">
+                ${item.badge}
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-espresso">${item.title}</h3>
+            <p class="font-display italic text-xs text-bronzeDark font-semibold mt-0.5">${item.subtitle}</p>
+            <p class="text-sm text-espresso/75 mt-3 leading-relaxed">${item.description}</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-sand/80 flex items-center justify-between text-xs">
+            <span class="text-espresso/60 font-medium">სთორი · ქუთაისი</span>
+            <button
+              type="button"
+              onclick="openReservationModal('${item.title.replace(/'/g, "\\'")}')"
+              class="font-semibold text-bronzeDark hover:text-espresso underline underline-offset-4 cursor-pointer"
+            >
+              მაგიდის დაჯავშნა
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Copy phone number with graceful fallback
+    function copyPhoneNumber() {
+      const phone = '551 55 55 10';
+      const feedback = document.getElementById('copy-feedback');
+
+      const showCopied = () => {
+        feedback.textContent = 'ნომერი დაკოპირდა: ' + phone;
+        setTimeout(() => {
+          feedback.textContent = '';
+        }, 3000);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(phone).then(showCopied).catch(() => {
+          fallbackCopy(phone, showCopied);
+        });
+      } else {
+        fallbackCopy(phone, showCopied);
+      }
+    }
+
+    function fallbackCopy(text, onSuccess) {
+      try {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        onSuccess();
+      } catch (err) {
+        const feedback = document.getElementById('copy-feedback');
+        feedback.textContent = 'ნომერი: ' + text;
+      }
+    }
+
+    // Reservation Modal Controls
+    function openReservationModal(prefillNote = '') {
+      const modal = document.getElementById('reservation-modal');
+      const formContainer = document.getElementById('reservation-form-container');
+      const confirmation = document.getElementById('reservation-confirmation');
+      const dateInput = document.getElementById('booking-date');
+      const noteInput = document.getElementById('booking-note');
+
+      // Set default date to today if empty
+      if (!dateInput.value) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+      }
+
+      if (prefillNote) {
+        noteInput.value = 'სურვილი: ' + prefillNote;
+      }
+
+      formContainer.classList.remove('hidden');
+      confirmation.classList.add('hidden');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeReservationModal() {
+      const modal = document.getElementById('reservation-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('guest-name').value.trim();
+      const phone = document.getElementById('guest-phone').value.trim();
+      const date = document.getElementById('booking-date').value;
+      const time = document.getElementById('booking-time').value;
+      const guests = document.getElementById('booking-guests').value;
+      const note = document.getElementById('booking-note').value.trim();
+
+      const summaryEl = document.getElementById('confirmation-summary');
+      summaryEl.innerHTML = `
+        <strong>${escapeHtml(name)}</strong>, თქვენი მაგიდის მოთხოვნა დაფიქსირდა რესტორანში <strong>„სთორი“</strong> (წერეთლის ქ. 52, ქუთაისი).<br />
+        <span class="inline-block mt-2 text-xs text-espresso/75">
+          📅 თარიღი: <strong>${escapeHtml(date)}</strong> · 🕒 დრო: <strong>${escapeHtml(time)}</strong> · 👥 <strong>${escapeHtml(guests)}</strong><br />
+          📞 ტელეფონი: <strong>${escapeHtml(phone)}</strong>
+          ${note ? `<br />📝 შენიშვნა: <em>${escapeHtml(note)}</em>` : ''}
+        </span>
+      `;
+
+      document.getElementById('reservation-form-container').classList.add('hidden');
+      document.getElementById('reservation-confirmation').classList.remove('hidden');
+      document.getElementById('booking-form').reset();
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function togglePinInfo() {
+      const el = document.getElementById('pin-extra-info');
+      el.classList.toggle('hidden');
+    }
+
+    function dismissSalesBanner() {
+      const banner = document.getElementById('sales-banner');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    // Close modal on Escape key or backdrop click
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeReservationModal();
+      }
+    });
+
+    document.getElementById('reservation-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'reservation-modal') {
+        closeReservationModal();
+      }
+    });
+
+    // Initialize menu and year on load
+    document.addEventListener('DOMContentLoaded', () => {
+      filterMenu('all');
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>
